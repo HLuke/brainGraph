@@ -72,6 +72,7 @@ NBS <- function(A, covars, con.mat, con.type=c('t', 'f'), X=NULL, con.name=NULL,
   inds.upper <- as.data.table(which(upper.tri(A[, , 1]), arr.ind=TRUE))
   setnames(inds.upper, c('Var1', 'Var2'))
   setkey(inds.upper, Var1, Var2)
+  setnames(A.m, c('Var1', 'Var2', 'Var3', 'value'))
   setkey(A.m, Var1, Var2)
   A.m <- A.m[inds.upper]
   setkey(A.m, Var1, Var2, Var3)
